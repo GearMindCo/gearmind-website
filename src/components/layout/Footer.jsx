@@ -46,9 +46,6 @@ export default function Footer() {
           <p className="text-gray-500 text-xs">
             &copy; {currentYear} GearMind. Todos os direitos reservados.
           </p>
-          <p className="text-gray-500 text-xs flex items-center gap-1">
-            Construído na graxa e no código.
-          </p>
         </div>
       </div>
     </footer>

@@ -6,15 +6,17 @@ import Solucao from "./components/landing/Solucao";
 import Funcionamento from "./components/landing/Funcionamento";
 import Comparacao from "./components/landing/Comparacao";
 import FAQ from "./components/landing/FAQ";
-
+import Download from "./components/landing/Download";
 
 import Footer from "./components/layout/Footer";
 
+
 function App() {
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-black text-white selection:bg-orange-500/30 scroll-smooth">
-      <Navbar />
+    <main className="relative min-h-screen w-full overflow-x-hidden bg-black text-white selection:bg-orange-500/30 scroll-smooth">
       
+      <Navbar />
+    
       <section className="min-h-screen ">
         <Hero />
       </section>
@@ -36,10 +38,15 @@ function App() {
       </section>
 
       <section className="min-h-screen">
+        <Download />
+      </section>
+
+      <section className="min-h-screen">
         <FAQ />
       </section>
 
-    <Footer />
+      <Footer />
+      
     </main>
   );
 }

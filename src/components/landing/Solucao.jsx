@@ -29,7 +29,7 @@ const solutions = [
 
 export default function SolutionSection() {
   return (
-    <section className="bg-black py-25 px-6 relative overflow-hidden">
+    <section className="bg-black px-6 relative overflow-hidden">
       {/* Grid de fundo sutil para manter o padrão do Hero */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
@@ -38,18 +38,18 @@ export default function SolutionSection() {
           <h2 className="text-orange-500 font-bold tracking-widest uppercase text-sm mb-4">
             Engenharia de Dados Aplicada
           </h2>
-          <h3 className="text-4xl md:text-5xl font-black text-white mb-6">
+          <h3 className="text-4xl md:text-6xl font-black text-white mb-6">
             A CIÊNCIA POR TRÁS DA <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-300">
               SUA SEGURANÇA.
             </span>
           </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-400 max-w-3xl mx-auto text-lg">
             O GearMind não dá palpites. Ele processa 45.000 registros de telemetria sintética para entender o comportamento da sua moto.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
           {solutions.map((item, index) => (
             <div 
               key={index} 

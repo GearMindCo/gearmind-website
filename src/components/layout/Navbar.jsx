@@ -19,13 +19,13 @@ export default function Navbar() {
                 Início
               </a>
               <a href="#" className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all">
-                Garagem
+                Solução
               </a>
               <a href="#" className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all">
-                Manutenções
+                Benefícios
               </a>
               <a href="#" className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all">
-                Peças
+                Download
               </a>
             </div>
           </div>

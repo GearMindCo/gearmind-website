@@ -8,7 +8,7 @@ export default function Problema() {
         
         {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tight mb-6 py-25">
+          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tight py-15">
             O manual da sua moto <br className="hidden md:block" />
             <span className="text-orange-500 italic">NÃO TE CONHECE</span>
           </h2>

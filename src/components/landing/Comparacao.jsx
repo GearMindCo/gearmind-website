@@ -28,7 +28,7 @@ export default function Comparacao() {
   ];
 
   return (
-    <section className="relative py-32 bg-black border-t border-white/5 overflow-hidden">
+    <section className="relative bg-black border-t border-white/5 overflow-hidden mt-[-5rem]">
       
       {/* Background sutil */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-500/[0.03] via-black to-black pointer-events-none"></div>
@@ -39,10 +39,10 @@ export default function Comparacao() {
             <span className="text-orange-500 font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
               Análise de Eficiência
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6">
               A EVOLUÇÃO DA <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-300 italic">MANUTENÇÃO</span>
             </h2>
-            <p className="text-gray-400 text-lg font-light leading-relaxed">
+            <p className="text-gray-400 text-xl font-light leading-relaxed">
               O adesivo colado no seu painel é cego para o seu comportamento. O GearMind calcula o desgaste real da sua máquina.
             </p>
           </div>
