@@ -1,6 +1,6 @@
 export default function Problema() {
   return (
-    <section className="relative py-24 bg-black border-t border-white/10 overflow-hidden">
+    <section className="relative pt-10">
       
       {/* Detalhe visual de fundo (Grid sutil) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
@@ -8,11 +8,11 @@ export default function Problema() {
         
         {/* Cabeçalho da Seção */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tight py-15">
+          <h2 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tight">
             O manual da sua moto <br className="hidden md:block" />
             <span className="text-orange-500 italic">NÃO TE CONHECE</span>
           </h2>
-          <p className="text-xl text-white-400 font-light leading-relaxed">
+          <p className="text-lg text-white-400 font-light leading-relaxed pt-10">
             Os manuais são escritos para <span className="font-bold text-orange-700">condições perfeitas de laboratório</span>, não pro asfalto 
             e uso diário nos brasileiros. Sua moto exige uma inteligência que entenda o asfalto que você anda todo dia.
           </p>
@@ -48,7 +48,7 @@ export default function Problema() {
             <h3 className="text-2xl font-bold text-white uppercase tracking-wide">
               Arrisca seu Motor
             </h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed mt-3">
               Por outro lado, esticar o prazo e esquecer a quilometragem é o caminho mais rápido para ficar na mão. Uma peça que quebra no momento errado custa dez vezes mais.
             </p>
           </div>

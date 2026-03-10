@@ -27,10 +27,13 @@ export default function Funcionamento() {
   ];
 
   return (
-    <section className="relative bg-black overflow-hidden border-t border-white/5 mt-[-8rem]">
+    <section className="relative bg-black overflow-hidden -mt-35">
       
       {/* Background Glow */}
       <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[450px] bg-orange-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+      
+      {/* Grid de fundo sutil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         

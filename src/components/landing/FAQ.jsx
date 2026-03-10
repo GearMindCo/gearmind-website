@@ -37,17 +37,20 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="relative w-full bg-black border-t border-white/5 overflow-hidden mt-[-3rem]">
+    <section className="relative w-full mt-35 bg-black mb-40">
       
       {/* Brilho Centralizado no Topo */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-orange-500/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+      
+      {/* Grid de fundo sutil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         
         {/* CABEÇALHO CENTRALIZADO */}
         <div className="text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
           
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-6 leading-tight">
+          <h2 className="text-5xl md:text-6xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-6 leading-tight">
             DÚVIDAS <br className="md:hidden" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-300 italic">
               TÉCNICAS
@@ -76,10 +79,10 @@ export default function FAQ() {
                 {/* Botão da Pergunta */}
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full text-left p-8 flex justify-between items-start gap-4 focus:outline-none group"
+                  className="w-full text-left p-5 flex justify-between items-start gap-4 focus:outline-none group"
                 >
                   <span 
-                    className={`text-lg md:text-xl font-bold tracking-wide transition-colors duration-300 ${
+                    className={`text-lg md:text-lg font-bold tracking-wide transition-colors duration-300 ${
                       isOpen ? "text-orange-400" : "text-white group-hover:text-orange-500"
                     }`}
                   >

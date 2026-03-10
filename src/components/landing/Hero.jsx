@@ -27,7 +27,7 @@ export default function Hero() {
         </span>
       </div>
       
-      <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight leading-tight relative z-20">
+      <h1 className="text-5xl md:text-7xl lg:text-7xl font-black text-white mb-6 tracking-tight leading-tight relative z-20">
         CUIDE DA SUA MOTO <br className="hidden md:block" />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-300 italic">
           DE FORMA INTELIGENTE.
@@ -44,7 +44,7 @@ export default function Hero() {
           placeholder="Seu melhor e-mail..." 
           className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-all backdrop-blur-sm"
         />
-        <button className="whitespace-nowrap px-8 py-4 bg-orange-500 hover:bg-orange-600 text-black font-black uppercase tracking-wide rounded-xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(249,115,22,0.3)]">
+        <button className="whitespace-nowrap px-8 bg-orange-500 hover:bg-orange-600 text-black font-black uppercase tracking-wide rounded-xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(249,115,22,0.3)]">
           Acesso VIP à IA
         </button>
       </div>

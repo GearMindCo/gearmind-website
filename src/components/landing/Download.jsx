@@ -1,9 +1,9 @@
 export default function DownloadCTA() {
   return (
-    <section className="relative w-full border-t border-white/5 bg-black overflow-hidden">
+    <section className="relative w-full pt-10">
       
       {/* Container Full Width Dividido (60% Esquerda / 40% Direita) */}
-      <div className="flex flex-col lg:flex-row w-full min-h-[60vh] mt-30">
+      <div className="flex flex-col lg:flex-row w-full min-h-[60vh] mt-5">
         
         {/* LADO ESQUERDO: A Promessa e o Input (Sem grids, apenas um glow suave) */}
         <div className="w-full lg:w-3/5 px-8 py-24 md:px-16 lg:px-24 xl:px-32 flex flex-col justify-center relative bg-black">

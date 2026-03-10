@@ -6,25 +6,37 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo Estilo Automotivo */}
-          <div className="flex-shrink-0 cursor-pointer hover:scale-105 transition-transform">
+          <div className="flex-shrink-0 cursor-pointer hover:scale-105 transition-transform" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <span className="text-2xl font-black text-white tracking-tighter italic">
               GEAR<span className="text-orange-500">MIND</span>
             </span>
           </div>
 
-          {/* Menu Desktop (Itens que remetem ao uso do app) */}
+          {/* Menu Desktop */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#" className="text-orange-500 font-bold px-3 py-2 text-sm uppercase tracking-widest relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-orange-500">
+              <a 
+                href="#hero" 
+                className="text-gray-400 hover:text-orange-500 px-3 py-2 text-sm font-bold uppercase tracking-widest transition-all"
+              >
                 Início
               </a>
-              <a href="#" className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all">
+              <a 
+                href="#solucao" 
+                className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all"
+              >
                 Solução
               </a>
-              <a href="#" className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all">
-                Benefícios
+              <a 
+                href="#comparacao" 
+                className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all"
+              >
+                Comparação
               </a>
-              <a href="#" className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all">
+              <a 
+                href="#download" 
+                className="text-gray-400 hover:text-white hover:bg-white/5 px-3 py-2 rounded-md text-sm font-bold uppercase tracking-widest transition-all"
+              >
                 Download
               </a>
             </div>

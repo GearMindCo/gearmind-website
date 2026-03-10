@@ -28,18 +28,18 @@ export default function Comparacao() {
   ];
 
   return (
-    <section className="relative bg-black border-t border-white/5 overflow-hidden mt-[-5rem]">
+    <section className="relative bg-black border-t border-white/5 overflow-hidden -mt-20">
       
-      {/* Background sutil */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-500/[0.03] via-black to-black pointer-events-none"></div>
+      {/* Grid de fundo sutil */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         
-          <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="text-orange-500 font-bold tracking-[0.2em] text-sm uppercase mb-4 block">
               Análise de Eficiência
             </span>
-            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-6">
               A EVOLUÇÃO DA <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-300 italic">MANUTENÇÃO</span>
             </h2>
             <p className="text-gray-400 text-xl font-light leading-relaxed">

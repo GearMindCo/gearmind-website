@@ -17,7 +17,7 @@ function App() {
       
       <Navbar />
     
-      <section className="min-h-screen ">
+      <section id="hero" className="scroll-mt-24 min-h-screen">
         <Hero />
       </section>
       
@@ -25,7 +25,7 @@ function App() {
         <Problema />
       </section>
 
-      <section className="min-h-screen">
+      <section id="solucao" className="scroll-mt-55 min-h-screen ">
         <Solucao />
       </section>
 
@@ -33,15 +33,15 @@ function App() {
         <Funcionamento />
       </section>
 
-      <section className="min-h-screen">
+      <section id="comparacao" className="scroll-mt-24 min-h-screen ">
         <Comparacao />
       </section>
 
-      <section className="min-h-screen">
+      <section id="download" className="scroll-mt-30">
         <Download />
       </section>
 
-      <section className="min-h-screen">
+      <section>
         <FAQ />
       </section>
 
