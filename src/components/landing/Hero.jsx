@@ -1,4 +1,35 @@
+import React, { useState } from 'react';
+
 export default function Hero() {
+  const [emailHero, setEmailHero] = useState("");
+
+  const handleDirecionarLead = () => {
+    // Procura o input oficial lá no componente de Download
+    const inputDestino = document.getElementById("email");
+    
+    if (inputDestino) {
+      // 1. O "Pulo do Gato": Força o React a reconhecer que o valor mudou via código
+      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
+      nativeInputValueSetter.call(inputDestino, emailHero);
+      
+      // 2. Dispara o evento avisando o navegador (assim o Formspree lê direitinho)
+      const ev = new Event('input', { bubbles: true });
+      inputDestino.dispatchEvent(ev);
+      
+      // 3. Rola a página suavemente até o formulário
+      inputDestino.scrollIntoView({ behavior: "smooth", block: "center" });
+      
+      // 4. Dá um pequeno delay para a rolagem terminar e então foca no campo
+      setTimeout(() => {
+        inputDestino.focus();
+      }, 600);
+      
+    } else {
+      // Fallback: se não achar o ID, joga pra âncora geral da seção
+      window.location.href = "#download";
+    }
+  };
+
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 pt-20 text-center overflow-hidden bg-black">
       
@@ -17,7 +48,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/20 blur-[150px] rounded-full z-10 pointer-events-none"></div>
 
       {/* Conteúdo (Badge, Título, etc.) */}
-      <div className="inline-flex items-center gap-3 px-4 py-2 mb-8 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-md relative z-20">
+      <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-orange-500/30 bg-orange-500/10 backdrop-blur-md relative z-20">
         <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-orange-500"></span>
@@ -41,10 +72,15 @@ export default function Hero() {
       <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg mx-auto relative z-20">
         <input 
           type="email" 
+          value={emailHero}
+          onChange={(e) => setEmailHero(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && handleDirecionarLead()}
           placeholder="Seu melhor e-mail..." 
           className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-all backdrop-blur-sm"
         />
-        <button className="whitespace-nowrap px-8 bg-orange-500 hover:bg-orange-600 text-black font-black uppercase tracking-wide rounded-xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(249,115,22,0.3)]">
+        <button 
+          onClick={handleDirecionarLead}
+          className="whitespace-nowrap px-8 bg-orange-500 hover:bg-orange-600 text-black font-black uppercase tracking-wide rounded-xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(249,115,22,0.3)]">
           Acesso VIP à IA
         </button>
       </div>
@@ -53,7 +89,6 @@ export default function Hero() {
         Seja o primeiro a testar o cérebro do GearMind quando ele ligar.
       </p>
 
-      {/* O BLOCO DO QUADRICULADO FOI REMOVIDO DAQUI */}
     </section>
   )
 }

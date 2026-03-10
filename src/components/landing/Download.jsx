@@ -1,17 +1,23 @@
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
+
 export default function DownloadCTA() {
+  // Conectando com o seu ID do Formspree que você passou antes
+  const [state, handleSubmit] = useForm("mwvrlwvg");
+
   return (
     <section className="relative w-full pt-10">
       
       {/* Container Full Width Dividido (60% Esquerda / 40% Direita) */}
       <div className="flex flex-col lg:flex-row w-full min-h-[60vh] mt-5">
         
-        {/* LADO ESQUERDO: A Promessa e o Input (Sem grids, apenas um glow suave) */}
+        {/* LADO ESQUERDO: A Promessa e o Input */}
         <div className="w-full lg:w-3/5 px-8 py-24 md:px-16 lg:px-24 xl:px-32 flex flex-col justify-center relative bg-black">
           {/* Luz de fundo orgânica e assimétrica */}
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,rgba(249,115,22,0.08),transparent_50%)] pointer-events-none"></div>
           
           <div className="relative z-10">
-            <span className="text-orange-500 font-bold tracking-[0.3em] text-xs uppercase mb-6 block flex items-center gap-3">
+            <span className="text-orange-500 font-bold tracking-[0.3em] text-xs uppercase mb-6 flex items-center gap-3">
               <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
               Acesso Antecipado
             </span>
@@ -28,24 +34,45 @@ export default function DownloadCTA() {
               Entre para a lista de espera e seja o primeiro a plugar sua moto na nossa rede quando o sistema for ao ar.
             </p>
             
-            {/* Formulário com cantos retos (Design mais brutalista/tecnológico) */}
-            <div className="flex flex-col sm:flex-row gap-0 max-w-xl shadow-2xl">
-              <input 
-                type="email" 
-                placeholder="Seu e-mail de piloto..." 
-                className="flex-grow px-6 py-5 bg-white/[0.03] border border-white/10 sm:border-r-0 focus:bg-white/[0.05] focus:outline-none focus:border-orange-500 text-white transition-all"
-              />
-              <button className="px-10 py-5 bg-orange-500 text-black font-black uppercase tracking-widest hover:bg-orange-400 active:bg-orange-600 transition-colors whitespace-nowrap">
-                Entrar na Fila
-              </button>
-            </div>
+            {/* LÓGICA DO FORMSPREE AQUI */}
+            {state.succeeded ? (
+              <div className="p-6 bg-orange-500/10 border border-orange-500/30 text-orange-400 font-bold tracking-widest uppercase max-w-xl shadow-[0_0_20px_rgba(249,115,22,0.1)]">
+                Piloto cadastrado na base de dados! Te avisaremos no lançamento.
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-0 max-w-xl shadow-2xl relative">
+                <input 
+                  id="email" 
+                  name="email"
+                  type="email" 
+                  required
+                  placeholder="Seu e-mail de piloto..." 
+                  className="flex-grow px-6 py-5 bg-white/[0.03] border border-white/10 sm:border-r-0 focus:bg-white/[0.05] focus:outline-none focus:border-orange-500 text-white transition-all"
+                />
+                <button 
+                  type="submit" 
+                  disabled={state.submitting}
+                  className="px-10 py-5 bg-orange-500 text-black font-black uppercase tracking-widest hover:bg-orange-400 active:bg-orange-600 transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed">
+                  {state.submitting ? "Processando..." : "Entrar na Fila"}
+                </button>
+                
+                {/* Validação de erro invisível (aparece só se der erro no envio) */}
+                <ValidationError 
+                  prefix="Email" 
+                  field="email"
+                  errors={state.errors}
+                  className="absolute -bottom-8 left-0 text-red-500 text-xs font-bold"
+                />
+              </form>
+            )}
+            
           </div>
         </div>
 
-        {/* LADO DIREITO: Status das Lojas (Fundo cinza escuro para contraste pesado) */}
-        <div className="w-full lg:w-2/5 bg-[#0a0a0a] border-l border-white/5 px-8 py-24 md:px-16 flex flex-col justify-center items-start lg:items-center relative">
+        {/* LADO DIREITO: Status das Lojas */}
+        <div className="w-full lg:w-2/5 bg-[#0a0a0a] border-l border-white/5 px-8 py-24 md:px-16 flex flex-col justify-center items-start lg:items-center relative overflow-hidden">
           
-          {/* Watermark Gigante de "DEV" no fundo para compor o visual */}
+          {/* Watermark Gigante de "DEV" no fundo */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] font-black text-white/[0.02] pointer-events-none select-none">
             DEV
           </div>
@@ -88,7 +115,6 @@ export default function DownloadCTA() {
             
           </div>
         </div>
-
       </div>
     </section>
   );
