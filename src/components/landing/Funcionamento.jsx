@@ -38,7 +38,7 @@ export default function Funcionamento() {
           <span className="text-blue-600 font-bold tracking-[0.2em] text-xs md:text-sm uppercase mb-2 md:mb-4 block">
             Arquitetura do Sistema
           </span>
-          <h2 className="text-5xl md:text-5xl max-[350px]:text-3xl font-black text-white uppercase tracking-tight mb-4 md:mb-6">
+          <h2 className="text-4xl md:text-5xl max-[350px]:text-3xl font-black text-white uppercase tracking-tight mb-4 md:mb-6">
             COMO O <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-300 italic pr-1">MANTU</span> PENSA
           </h2>
           <p className="text-gray-400 text-sm md:text-xl font-light leading-relaxed">
