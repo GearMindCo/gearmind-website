@@ -25,7 +25,7 @@ function App() {
         <Problema />
       </section>
 
-      <section id="solucao" className="scroll-mt-12 md:scroll-mt-55 min-h-screen">
+      <section id="solucao" className="scroll-mt-35 md:scroll-mt-55 min-h-screen">
         <Solucao />
       </section>
 
@@ -33,11 +33,11 @@ function App() {
         <Funcionamento />
       </section>
 
-      <section id="comparacao" className="scroll-mt-12 md:scroll-mt-24 min-h-screen">
+      <section id="comparacao" className="scroll-mt-35 md:scroll-mt-35 min-h-screen">
         <Comparacao />
       </section>
 
-      <section id="download" className="scroll-mt-12 md:scroll-mt-30">
+      <section id="download" className="scroll-mt-15 md:scroll-mt-35">
         <Download />
       </section>
 
