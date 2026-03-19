@@ -29,7 +29,8 @@ export default function Funcionamento() {
   ];
 
   return (
-    <section className="relative w-full bg-black overflow-hidden py-50 md:py-24 lg:pb-24 lg:pt-0 lg:-mt-12">
+      
+  <section id="funcionalidade" className="relative w-full pt-30 md:pt-0 pb-40 md:pb-32 bg-black min-[1920px]:-mt-20">
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-8 relative z-10">
         

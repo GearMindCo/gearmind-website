@@ -25,7 +25,7 @@ function App() {
         <Problema />
       </section>
 
-      <section id="solucao" className="scroll-mt-35 md:scroll-mt-55 min-h-screen">
+      <section id="solucao" className="scroll-mt-5 md:scroll-mt-55 min-h-screen">
         <Solucao />
       </section>
 

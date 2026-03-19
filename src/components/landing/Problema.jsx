@@ -1,6 +1,7 @@
 export default function Problema() {
   return (
-    <section className="relative pt-20 pb-20">
+
+  <section className="relative w-full pt-10 md:pt-10 md:pb-12 flex flex-col">
       
       {/* Grid no fundo */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-8 relative z-10">

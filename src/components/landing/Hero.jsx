@@ -1,29 +1,30 @@
-import React, { useState } from 'react';
+"use client"; // Necessário se estiver usando Next.js App Router (Next 13+)
+
+import { useState } from 'react';
 
 export default function Hero() {
-  const [emailHero, setEmailHero] = useState("");
+  // 1. Estados do Componente
+  const [emailHero, setEmailHero] = useState('');
 
+  // 2. Função de Captura de Lead
   const handleDirecionarLead = () => {
-    const inputDestino = document.getElementById("email");
-    
-    if (inputDestino) {
-      const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set;
-      nativeInputValueSetter.call(inputDestino, emailHero);
-      
-      const ev = new Event('input', { bubbles: true });
-      inputDestino.dispatchEvent(ev);
-      
-      inputDestino.scrollIntoView({ behavior: "smooth", block: "center" });
-      
-      setTimeout(() => {
-        inputDestino.focus();
-      }, 600);
-      
-    } else {
-      window.location.href = "#download";
+    // Validação básica para não enviar vazio
+    if (!emailHero || !emailHero.includes('@')) {
+      alert("Por favor, insira um e-mail válido para garantir seu acesso VIP.");
+      return;
     }
+
+    // AQUI ENTRA A SUA LÓGICA DE BANCO DE DADOS OU API (Ex: Supabase, Firebase, etc)
+    console.log("Lead capturado com sucesso:", emailHero);
+    
+    // Feedback visual temporário (pode trocar por um Toast depois)
+    alert(`Tudo certo! E-mail ${emailHero} na lista VIP do Mantu.`);
+    
+    // Limpa o campo após o envio
+    setEmailHero('');
   };
 
+  // 3. Renderização da Interface
   return (
     <section className="relative flex flex-col items-center justify-center min-h-[100dvh] text-center overflow-hidden bg-black">
       
@@ -40,8 +41,8 @@ export default function Hero() {
       {/* Brilho Azul Centralizado */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 blur-[300px] rounded-full z-10 pointer-events-none"></div>
 
-      {/* Conteúdo Principal */}
-      <div className="relative z-20 px-4 md:px-6 md:pt-32 flex flex-col items-center justify-center h-full w-full">
+      {/* Conteúdo Principal (Com o ajuste pt-24 no mobile para descer o texto) */}
+      <div className="relative z-20 px-4 md:px-6 pt-24 md:pt-32 flex flex-col items-center justify-center h-full w-full">
         
         {/* Badge */}
         <div className="inline-flex items-center gap-2 md:gap-3 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-blue-600/30 bg-blue-600/10 backdrop-blur-md mb-6 md:mb-8">
@@ -68,18 +69,19 @@ export default function Hero() {
         </p>
         
         {/* Input e Botão */}
-        <div className="flex flex-col sm:flex-row gap-2 md:gap-4 w-full max-w-lg mx-auto">
+        {/* Input e Botão */}
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-[85%] sm:w-full max-w-[280px] sm:max-w-lg mx-auto">
           <input 
             type="email" 
             value={emailHero}
             onChange={(e) => setEmailHero(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && handleDirecionarLead()}
             placeholder="Seu melhor e-mail..." 
-            className="w-full px-3 md:px-6 py-2.5 md:py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-600 transition-all backdrop-blur-sm text-xs md:text-base"
+            className="w-full px-4 md:px-6 py-3 md:py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-blue-600 transition-all backdrop-blur-sm text-sm md:text-base text-center sm:text-left"
           />
           <button 
             onClick={handleDirecionarLead}
-            className="whitespace-nowrap px-5 md:px-8 py-2.5 md:py-4 bg-blue-600 hover:bg-blue-700 text-black font-black uppercase tracking-wide rounded-xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(37,99,235,0.3)] text-xs md:text-base">
+            className="w-full sm:w-auto whitespace-nowrap px-6 md:px-8 py-3 md:py-4 bg-blue-600 hover:bg-blue-700 text-black font-black uppercase tracking-wide rounded-xl transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(37,99,235,0.3)] text-sm md:text-base">
             Acesso VIP à IA
           </button>
         </div>

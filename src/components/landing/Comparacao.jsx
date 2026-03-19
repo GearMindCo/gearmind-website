@@ -28,7 +28,7 @@ export default function Comparacao() {
   ];
 
   return (
-    <section className="relative w-full bg-black border-t border-white/5 overflow-hidden">
+    <section className="relative w-full overflow-hidden pt-0 pb-8 sm:pt-10 sm:pb-12">
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-8 relative z-10">
         

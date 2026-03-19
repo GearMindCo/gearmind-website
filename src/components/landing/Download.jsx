@@ -36,7 +36,7 @@ export default function DownloadCTA() {
   };
 
   return (
-    <section className="relative w-full pt-3 md:pt-6 -mt-2 md:-mt-4 max-[350px]:mt-30">
+    <section className="relative w-full pt-2 md:pt-0 pb-20 md:pb-32 mt-0 sm:pt-10">
       <div className="flex flex-col lg:flex-row w-full min-h-[60vh] md:min-h-[70vh] mt-0 md:mt-5">
         
         {/* LADO ESQUERDO (Formulário e Texto) */}

@@ -30,7 +30,7 @@ const solutions = [
 export default function SolutionSection() {
   return (
 
-   <section id="solucao" className="relative w-full overflow-hidden px-4 md:px-8 bg-black mt-45 md:-mt-20 max-[350px]:mt-20 mb:mb-15">
+    <section id="solucao" className="relative w-full flex flex-col overflow-hidden px-4 md:px-8 bg-black pt-30 max-[300px]:pt-16 md:pt-0 pb-0 md:pb-32 mt-0 min-[1920px]:-mt-20">
 
       <div className="max-w-7xl mx-auto relative z-10">
         
