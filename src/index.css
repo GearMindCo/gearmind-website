@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-/* Em vez de usar @apply aqui, vamos definir o básico 
-   que o Tailwind v4 espera para resetar o navegador */
 :root {
   color-scheme: dark;
 }
@@ -18,6 +16,7 @@ html {
   /* Melhora a renderização de fontes e transições durante o scroll */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
 }
 
 /* Esconde a barra de scroll feia, mantendo a funcionalidade */
